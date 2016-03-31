@@ -1,0 +1,19 @@
+module APIConnection {
+
+    interface Client {
+        void receiveBasicUserData(in string jsonShowInfo);
+        void receiveRepoDetails(in string jsonShowInfo);
+        void receiveDeveloperLanguages(in string jsonShowInfo);
+        void receiveRepoCount(in string jsonShowInfo);
+        void receiveCloneUrl(in string jsonShowInfo);
+    };
+    
+    interface GitHub {
+        void getBasicUserData(in string userName, in Client client);
+        void getRepoDetails(in string userName, in string repo, in Client client);
+        void getDeveloperLanguages(in string userName, in string repo, in Client client);
+        void getRepoCount(in string userName, in Client client);
+        void getCloneUrl(in string userName, in string repoName, in Client client);
+    };
+    
+};
